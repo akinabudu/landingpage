@@ -102,7 +102,7 @@ export default function Home() {
           {cards.map((card, key) => (
             <div
               key={key}
-              className=" flex flex-col items-start p-4 border h-[110vh] border-slate-300 rounded-lg w-full hover:bg-yellow-100"
+              className=" flex flex-col relative items-start p-4 border h-full border-slate-300 rounded-lg w-full hover:bg-yellow-100"
             >
               <h2 className="text-3xl font-bold text-gray-700 text-center w-full">
                 {card.title}
@@ -120,7 +120,7 @@ export default function Home() {
               <p className="mt-4 mb-2 text-md text-align tracking-tighter">
                 {card.desc}
               </p>
-              <div className="mt-4">
+              <div className="mt-4 mb-16">
                 <span className="font-bold my-2">🎯 Eligibility</span>
                 <br />
                 {card.eligibility}
@@ -129,7 +129,7 @@ export default function Home() {
               <Link
                 target="_blank"
                 href={card.href}
-                className="my-4 w-full h-16 flex  justify-center items-center bg-yellow-600 hover:bg-transparent border border-yellow-600 text-white hover:text-yellow-600   font-semibold py-1 px-2 rounded-lg"
+                className="my-4  h-10 flex w-5/6 justify-center items-center place-self-center absolute bottom-0 bg-yellow-600 hover:bg-transparent border border-yellow-600 text-white hover:text-yellow-600   font-semibold py-1 px-2 rounded-lg"
               >
                 I'm Interested
               </Link>
