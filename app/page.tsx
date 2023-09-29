@@ -63,7 +63,7 @@ export default function Home() {
     <div>
       <main className="mx-auto px-4 py-0">
         <Image
-          className="ml-20 mt-5 absolute"
+          className="md:ml-20 mt-5 mb-5 md:absolute"
           src="/assets/images/lmplogo.png"
           alt="lmplogo"
           height={100}
@@ -74,7 +74,7 @@ export default function Home() {
           <div className="mb-5 mx-5">
             <h1 className="text-5xl mb-2">
               Welcome to <br />{" "}
-              <span className="font-bold ">Learning Manifest Pod</span>
+              <span className="font-bold ">Learning Manifest Pod <br/> Registration Portal</span>
             </h1>
             <p className="text-[1rem] md:text-[1.7rem] my:0 my-1">
               Your Gateway to Digital Success!
