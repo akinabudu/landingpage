@@ -4,27 +4,55 @@ import Link from "next/link";
 export default function Home() {
   const cards = [
     {
-      title: "Join the Free Train and Build Challenge",
-      desc: "Embark on a two-month transformational journey, enhancing your existing design knowledge and elevating your skills to create web or mobile applications in an exciting pair challenge. Our carefully crafted program equips you with essential tools and knowledge. Compete to win an enticing prize of 50,000 Naira and set the stage for your successful career. ",
+      title: <div>Join the Free Train and Build Challenge</div>,
+      desc: (
+        <div>
+          Embark on a two-month transformational journey, enhancing your
+          existing design knowledge and elevating your skills to create web or
+          mobile applications in an exciting pair challenge. Our carefully
+          crafted program equips you with essential tools and knowledge. Compete
+          to win an enticing prize of <b>50,000 Naira</b> and set the stage for
+          your successful career.
+        </div>
+      ),
       eligibility:
-        "Must possess a design background in sigma, Adobe XD,sketch, Photoshop, or a related field.",
+        "Must possess a design background in Figma, Adobe XD,sketch, Photoshop, or a related field.",
       href: "https://forms.gle/CXLuAzVrFE21Pfiy9",
       img: "/assets/images/image1.png",
     },
     {
-      title: "Enroll in the Free Product Management Training:",
-      desc: "For those envisioning themselves as adept managers, this training is your gateway to honing your managerial skills. Learn the ins and outs of product cycle management, defining product vision, crafting effective strategies, and delivering outstanding results. Take charge and lead teams towards achieving organizational goals!",
-      eligibility: "Passionate about management and goal-oriented pursuits.",
+      title: <div>Enroll in the Free Product Management Training</div>,
+      desc: (
+        <div>
+          For those envisioning themselves as adept managers, this training is
+          your gateway to honing your managerial skills. Learn the ins and outs
+          of product cycle management, defining product vision, crafting
+          effective strategies, and delivering outstanding results. Take charge
+          and lead teams towards achieving organizational goals!
+        </div>
+      ),
+      eligibility: (
+        <div>Passionate about management and goal-oriented pursuits.</div>
+      ),
 
       href: "https://forms.gle/6g3i3EN6ySL6vzwA8",
       img: "/assets/images/image2.png",
     },
     {
-      title: "Learning Matchmaker",
-      desc: "Do you have a keen interest in various cutting-edge tech digital skills, such as cloud computing, artificial intelligence, blockchain, data science, cybersecurity, and software engineering? We'll connect you with expert trainers, facilitating your access to their informative and inspiring classes. We assist in finding free classes they offer, giving you a fantastic head start.   Sign up and stay updated on upcoming sessions and elevate your knowledge to the next level!",
-      eligibility: "Driven by genuine interest and passion.",
-      availability:
-        "Flexible dates to suit your schedule.Seize the opportunity to redefine your digital journey with LMP. Don't just learn; excel, innovate, and build a future of success. Join us and let's shape the digital landscape together! 🌟",
+      title: <div>Learning Matchmaker</div>,
+      desc: (
+        <div>
+          Do you have a keen interest in various cutting-edge tech digital
+          skills, such as cloud computing, artificial intelligence, blockchain,
+          data science, cybersecurity, and software engineering? We'll connect
+          you with expert trainers, facilitating your access to their
+          informative and inspiring classes. We assist in finding free classes
+          they offer, giving you a fantastic head start. Sign up and stay
+          updated on upcoming sessions and elevate your knowledge to the next
+          level!
+        </div>
+      ),
+      eligibility: <div>Driven by genuine interest and passion.</div>,
 
       href: "https://forms.gle/nDXxPrcsDAtShpJV7",
 
@@ -34,9 +62,16 @@ export default function Home() {
   return (
     <div>
       <main className="mx-auto px-4 py-0">
-        <section className="text-gray-600 md:h-screen flex-col flex md:flex-row justify-between md:justify-around items-center mt-[2rem] ">
+        <Image
+          className="ml-20 mt-5 absolute"
+          src="/assets/images/lmplogo.png"
+          alt="lmplogo"
+          height={100}
+          width={100}
+        />
+        <section className="text-gray-600 md:h-screen flex-col flex md:flex-row justify-between md:justify-around items-center ">
           {/* Left side of Flex */}
-          <div className="my-10 mx-5">
+          <div className="mb-5 mx-5">
             <h1 className="text-5xl mb-2">
               Welcome to <br />{" "}
               <span className="font-bold ">Learning Manifest Pod</span>
@@ -67,14 +102,16 @@ export default function Home() {
           {cards.map((card, key) => (
             <div
               key={key}
-              className=" flex flex-col items-start p-4 border border-slate-300 rounded-lg w-full hover:bg-yellow-100"
+              className=" flex flex-col items-start p-4 border h-[110vh] border-slate-300 rounded-lg w-full hover:bg-yellow-100"
             >
-              <h2 className="text-3xl font-bold  w-full">{card.title}</h2>
+              <h2 className="text-3xl font-bold text-gray-700 text-center w-full">
+                {card.title}
+              </h2>
               <hr className=" w-full my-4" />
               <Image
                 className="rounded-lg my-6 place-self-center"
                 src={card.img}
-                alt={card.title}
+                alt={card.href}
                 width={200}
                 height={100}
               />
@@ -88,11 +125,7 @@ export default function Home() {
                 <br />
                 {card.eligibility}
               </div>
-              <div className="mt-4">
-                <span className="font-bold my-2">🗓️ Availability</span>
-                <br />
-                {card.availability}
-              </div>
+
               <Link
                 target="_blank"
                 href={card.href}
@@ -105,7 +138,7 @@ export default function Home() {
         </section>
       </main>
       <footer className="bg-yellow-600">
-        <p className="text-center text-white py-6">
+        <p className="text-center text-white py-2">
           Copyright 2023 Learning Manifest Pod
         </p>
       </footer>
