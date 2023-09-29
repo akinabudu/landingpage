@@ -46,7 +46,7 @@ export default function Home() {
             </p>
             <Link
               href="#cardSection"
-              className="my-2 bg-green-600 hover:bg-transparent border border-green-600 text-white hover:text-green-600  inline-block font-semibold max-lg:py-1 py-2 max-lg:px-2 px-4 rounded-lg"
+              className="my-2 bg-yellow-600 hover:bg-transparent border border-yellow-600 text-white hover:text-yellow-600  inline-block font-semibold max-lg:py-1 py-2 max-lg:px-2 px-4 rounded-lg"
             >
               Get Started
             </Link>
@@ -67,9 +67,9 @@ export default function Home() {
           {cards.map((card, key) => (
             <div
               key={key}
-              className=" flex flex-col items-start p-4 border border-slate-300 rounded-lg w-full hover:bg-green-50"
+              className=" flex flex-col items-start p-4 border border-slate-300 rounded-lg w-full hover:bg-yellow-100"
             >
-              <h2 className="text-lg font-bold  w-full">{card.title}</h2>
+              <h2 className="text-3xl font-bold  w-full">{card.title}</h2>
               <hr className=" w-full my-4" />
               <Image
                 className="rounded-lg my-6 place-self-center"
@@ -96,7 +96,7 @@ export default function Home() {
               <Link
                 target="_blank"
                 href={card.href}
-                className="my-4 w-full h-16 flex bottom-0  justify-center items-center bg-green-600 hover:bg-transparent border border-green-600 text-white hover:text-green-600  inline-block font-semibold py-1 px-2 rounded-lg"
+                className="my-4 w-full h-16 flex  justify-center items-center bg-yellow-600 hover:bg-transparent border border-yellow-600 text-white hover:text-yellow-600   font-semibold py-1 px-2 rounded-lg"
               >
                 I'm Interested
               </Link>
@@ -104,7 +104,7 @@ export default function Home() {
           ))}
         </section>
       </main>
-      <footer className="bg-green-600">
+      <footer className="bg-yellow-600">
         <p className="text-center text-white py-6">
           Copyright 2023 Learning Manifest Pod
         </p>
