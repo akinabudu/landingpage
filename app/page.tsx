@@ -105,12 +105,16 @@ export default function Home() {
             </Link>
           </motion.div>
           {/* Right side of Flex */}
+          <motion.div className="w-1/4 h-full">
+
           <Image
             src={"/assets/images/image4.png"}
             alt="hero_image"
             height={150}
             width={300}
-          />
+initial={{ x: 100 }}
+          animate={{ x: 0 }}          />
+          </motion.div>
         </section>
 
         <section
@@ -121,7 +125,8 @@ export default function Home() {
         >
           {cards.map((card, key) => (
             <motion.div
-              initial={{ scale: 0.9 }}
+              initial={{ scale: 0.9, opacity: 0 }}
+          whileInView={{ opacity: 1 }}
               whileHover={{
                 scale: [0.9, 1],
                 boxShadow: ".5px .5px 1 rgba(0, 0, 0, 0.2)",

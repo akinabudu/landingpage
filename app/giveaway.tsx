@@ -5,6 +5,8 @@ import * as Yup from "yup";
 import axios from "axios";
 import { useToast } from "@/components/ui/use-toast"
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+
 
 
 const SignInSchema = Yup.object({
@@ -51,7 +53,10 @@ export default function Giveaway() {
   });
 
   return (
-    <div
+    <motion.div
+     initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{duration:.5}}
       id="giveaway"
       className="md:h-full w-full  flex flex-col items-center justify-center rounded mt-10 mb-20 gap-5 bg-gradient-to-r from-sky-500 to-indigo-500 p-10"
     >
@@ -103,6 +108,6 @@ export default function Giveaway() {
           SEND TO MY INBOX
         </Button>
       </form>
-    </div>
+    </motion.div>
   );
 }
