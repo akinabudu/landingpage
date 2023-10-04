@@ -103,11 +103,11 @@ export default function Home() {
             >
               Get Started
             </Link>
-            <div className="text-sm">
+            <div className="text-md">
               Get our free ebook on how to map your self attribute <br /> to a
               tech career and see what best fits you{" "}
-              <Link className="underline text-yellow-500" href="#giveaway">
-                here
+              <Link className="underline text-yellow-800" href="#giveaway">
+                here.
               </Link>
             </div>
           </motion.div>
