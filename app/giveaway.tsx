@@ -51,9 +51,9 @@ export default function Giveaway() {
   });
 
   return (
-    <section
+    <div
       id="giveaway"
-      className="w-full place-self-center flex flex-col items-center justify-center rounded mt-10 mb-20 gap-5 bg-gradient-to-r from-sky-500 to-indigo-500 p-10"
+      className="md:h-full w-full  flex flex-col items-center justify-center rounded mt-10 mb-20 gap-5 bg-gradient-to-r from-sky-500 to-indigo-500 p-10"
     >
       <div className="text-3xl  text-center my-5 w-full">
         <span className="font-bold mb-2">Get your free e-Book</span> <br />
@@ -103,6 +103,6 @@ export default function Giveaway() {
           SEND TO MY INBOX
         </Button>
       </form>
-    </section>
+    </div>
   );
 }

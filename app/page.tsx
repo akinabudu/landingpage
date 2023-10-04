@@ -117,7 +117,7 @@ export default function Home() {
           // initial={{ opacity: 0 }}
           // whileInView={{ opacity: 1 }}
           id="learning-options"
-          className="h-screen grid grid-cols-1 md:grid-cols-3 gap-4 my-5 px-10"
+          className="md:h-full grid grid-cols-1 md:grid-cols-3 gap-4 my-5 px-10"
         >
           {cards.map((card, key) => (
             <motion.div
