@@ -77,7 +77,7 @@ export default function Giveaway() {
               type="text"
               name="fullname"
               id="fullname"
-              className="w-5/6  border mx-5 text-md p-1 rounded-md"
+              className="w-5/6  border mx-5 text-md p-1 px-3 rounded-md"
               onChange={formik.handleChange}
               value={formik.values.fullname}
               placeholder="Adams Smith"
@@ -95,7 +95,7 @@ export default function Giveaway() {
               onChange={formik.handleChange}
               value={formik.values.email}
               placeholder="name@example.com"
-              className="w-5/6  border mx-5 text-md p-1 rounded-md"
+              className="w-5/6  border mx-5 text-md p-1 px-3 rounded-md"
               required
             />
           </div>

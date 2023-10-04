@@ -112,21 +112,20 @@ export default function Home() {
             </div>
           </motion.div>
           {/* Right side of Flex */}
-          <motion.div className="w-1/4 h-full">
+          <motion.div initial={{ x: 100 }}
+              animate={{ x: 0 }} className="w-1/4 h-full">
             <Image
               src={"/assets/images/image4.png"}
               alt="hero_image"
               height={150}
               width={300}
-              initial={{ x: 100 }}
-              animate={{ x: 0 }}
+              
             />
           </motion.div>
         </section>
 
         <section
-          // initial={{ opacity: 0 }}
-          // whileInView={{ opacity: 1 }}
+        
           id="learning-options"
           className="md:h-full grid grid-cols-1 md:grid-cols-3 gap-4 my-5 px-10"
         >
