@@ -108,8 +108,8 @@ export default function Home() {
           <Image
             src={"/assets/images/image4.png"}
             alt="hero_image"
-            height={200}
-            width={400}
+            height={150}
+            width={300}
           />
         </section>
 
