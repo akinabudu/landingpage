@@ -73,7 +73,7 @@ export default function Home() {
   ];
   return (
     <div>
-      <main className="mx-auto px-4 py-0">
+      <main className="mx-auto px-4 py-0 bg-gradient-to-t from-gray-100 to-white">
         <Image
           className="md:ml-20 mt-5 mb-5 md:absolute"
           src="/assets/images/lmplogo.png"
@@ -103,10 +103,10 @@ export default function Home() {
             >
               Get Started
             </Link>
-            <div className="text-md">
-              Get our free ebook on how to map your self attribute <br /> to a
+            <div className="text-md whitespace-normal">
+              Get our free ebook on how to map your self attribute to a
               tech career and see what best fits you{" "}
-              <Link className="underline text-yellow-800" href="#giveaway">
+              <Link className="underline text-yellow-800 " href="#giveaway">
                 here.
               </Link>
             </div>
@@ -146,7 +146,7 @@ export default function Home() {
               </h2>
               <hr className=" w-full my-4" />
               <Image
-                className="rounded-lg my-6 place-self-center"
+                className="rounded-lg my-2 place-self-center"
                 src={card.img}
                 alt={card.href}
                 width={100}
@@ -154,7 +154,7 @@ export default function Home() {
               />
               <hr className=" w-full my-2" />
 
-              <div className="mt-4 mb-2 text-md text-align tracking-tighter">
+              <div className="mt-4 mb-2 text-md text-justify tracking-tighter">
                 {card.desc}
               </div>
               <div className="mt-4 mb-16">
