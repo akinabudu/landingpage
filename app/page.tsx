@@ -1,16 +1,18 @@
-'use client'
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Giveaway from "./giveaway";
 
 export default function Home() {
-
-const heroVariants={
-  hidden:{opacity:0, x:-100,},
-  visible:{opacity:1, x:0,
-    transition:{type:"spring", duration:.5}
-  },
-}
+  const heroVariants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { type: "spring", duration: 0.5 },
+    },
+  };
 
   const cards = [
     {
@@ -72,8 +74,6 @@ const heroVariants={
   return (
     <div>
       <main className="mx-auto px-4 py-0">
-        
-
         <Image
           className="md:ml-20 mt-5 mb-5 md:absolute"
           src="/assets/images/lmplogo.png"
@@ -81,34 +81,32 @@ const heroVariants={
           height={100}
           width={100}
         />
-        {/* </motion.div> */}
-        <section 
-       
-        className="text-gray-600 md:h-screen flex-col flex md:flex-row justify-between md:justify-around items-center ">
-          {/* Left side of Flex */}
-          <motion.div 
-           variants={heroVariants}
-           initial="hidden"
-           animate="visible"
-
-          className="mb-5 mx-5">
-            <h1 className="text-5xl mb-2">
-              Welcome to <br />{" "}
-              <span className="font-bold ">Learning Manifest Pod <br/> Registration Portal</span>
+        <section className="text-gray-600 md:h-screen flex-col flex md:flex-row justify-center md:justify-around items-center ">
+          <motion.div
+            variants={heroVariants}
+            initial="hidden"
+            animate="visible"
+            className="mb-5 mx-5"
+          >
+            <h1 className="text-5xl mb-3">
+              Welcome to <br />
+              <span className="font-bold my-1 leading-5">
+                Learning Manifest Pod <br /> Registration Portal
+              </span>
             </h1>
             <div className="text-[1rem] md:text-[1.7rem] my:0 my-1">
               Your Gateway to Digital Success!
             </div>
             <Link
-              href="#cardSection"
-              className="my-4 bg-yellow-600 hover:bg-transparent border border-yellow-600 text-white hover:text-yellow-600  inline-block font-semibold max-lg:py-1 py-2 max-lg:px-2 px-4 rounded-lg"
+              href="#learning-options"
+              className="my-4 bg-yellow-600 hover:bg-transparent border border-yellow-600 text-white hover:text-yellow-600  inline-block font-semibold max-lg:py-1 py-4 max-lg:px-2 px-10 rounded-lg"
             >
               Get Started
             </Link>
           </motion.div>
           {/* Right side of Flex */}
           <Image
-            src="/assets/images/image4.png"
+            src={"/assets/images/image4.png"}
             alt="hero_image"
             height={200}
             width={400}
@@ -116,16 +114,19 @@ const heroVariants={
         </section>
 
         <section
-        // initial={{ opacity: 0 }}
-        // whileInView={{ opacity: 1 }}
-          id="cardSection"
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 my-10 px-10"
+          // initial={{ opacity: 0 }}
+          // whileInView={{ opacity: 1 }}
+          id="learning-options"
+          className="h-screen grid grid-cols-1 md:grid-cols-3 gap-4 my-5 px-10"
         >
           {cards.map((card, key) => (
             <motion.div
-            initial={{scale:.9}}
-            whileHover={{scale:[.9,1],boxShadow: ".5px .5px 1 rgba(0, 0, 0, 0.2)",}}
-            transition={{duration:1, delay:.2}}
+              initial={{ scale: 0.9 }}
+              whileHover={{
+                scale: [0.9, 1],
+                boxShadow: ".5px .5px 1 rgba(0, 0, 0, 0.2)",
+              }}
+              transition={{ duration: 1, delay: 0.2 }}
               key={key}
               className=" flex flex-col relative items-start p-4 border h-full border-slate-300 rounded-lg w-full hover:bg-gray-50"
             >
@@ -137,8 +138,8 @@ const heroVariants={
                 className="rounded-lg my-6 place-self-center"
                 src={card.img}
                 alt={card.href}
-                width={200}
-                height={100}
+                width={100}
+                height={50}
               />
               <hr className=" w-full my-2" />
 
@@ -161,16 +162,7 @@ const heroVariants={
             </motion.div>
           ))}
         </section>
-        <section className="w-full flex flex-col items-center justify-center mt-10 mb-20 gap-5 bg-gray-100 p-10">
-          <div className="text-3xl font-bold">Provide your Email to get a GiveAway</div>
-          <div className="w-5/6 text-center">
-
-          <label htmlFor="email">Email:</label>
-          <input type="email" name="email" id="email" className="w-3/6 border mx-5 text-lg p-3 rounded-md"/>
-          </div>
-          <button className="border py-2 px-10 bg-yellow-600 rounded-lg text-md">Get My Giveaway</button>
-
-        </section>
+        <Giveaway />
       </main>
       <footer className="bg-yellow-600">
         <div className="text-center text-white py-2">
