@@ -103,17 +103,24 @@ export default function Home() {
             >
               Get Started
             </Link>
+            <div className="text-sm">
+              Get our free ebook on how to map your self attribute <br /> to a
+              tech career and see what best fits you{" "}
+              <Link className="underline text-yellow-500" href="#giveaway">
+                here
+              </Link>
+            </div>
           </motion.div>
           {/* Right side of Flex */}
           <motion.div className="w-1/4 h-full">
-
-          <Image
-            src={"/assets/images/image4.png"}
-            alt="hero_image"
-            height={150}
-            width={300}
-initial={{ x: 100 }}
-          animate={{ x: 0 }}          />
+            <Image
+              src={"/assets/images/image4.png"}
+              alt="hero_image"
+              height={150}
+              width={300}
+              initial={{ x: 100 }}
+              animate={{ x: 0 }}
+            />
           </motion.div>
         </section>
 
@@ -126,7 +133,7 @@ initial={{ x: 100 }}
           {cards.map((card, key) => (
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+              whileInView={{ opacity: 1 }}
               whileHover={{
                 scale: [0.9, 1],
                 boxShadow: ".5px .5px 1 rgba(0, 0, 0, 0.2)",
