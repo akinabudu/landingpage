@@ -6,11 +6,13 @@ import axios from "axios";
 import { useToast } from "@/components/ui/use-toast"
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { Loader2 } from "lucide-react"
+
 
 
 
 const SignInSchema = Yup.object({
-  fullname: Yup.string().required("Required"),
+  fullName: Yup.string().required("Required"),
   email: Yup.string().email("Invalid email").required("Required"),
 });
 
@@ -19,7 +21,7 @@ export default function Giveaway() {
     const { toast } = useToast();
   const formik = useFormik({
     initialValues: {
-      fullname: "",
+      fullName: "",
       email: "",
     },
     validationSchema: SignInSchema,
@@ -27,7 +29,7 @@ export default function Giveaway() {
     onSubmit: async (values) => {
       setIsLoading(true);
       const url = "/api/v1/giveaway";
-      await axios.post(url, { fullname:values.fullname, email:values.email }).then(
+      await axios.post(url, { fullName:values.fullName, email:values.email }).then(
         function (response) {
           setTimeout(() => {
             if (response.data ==="Success"){
@@ -35,6 +37,8 @@ export default function Giveaway() {
                   title: response.data,
                   description: "Link has been sent to your email.",
                 });
+                 axios.post("/api/v1/email", { fullName:values.fullName, email:values.email })
+
             }else{
                 toast({
                     title: "Error",
@@ -49,7 +53,7 @@ export default function Giveaway() {
           console.log(error); // Failure
         }
       );
-    },
+    }
   });
 
   return (
@@ -71,15 +75,15 @@ export default function Giveaway() {
         <div className="w-full md:w-3/6 flex flex-col justify-end items-center gap-5">
           <div className="w-full  text-center flex items-center justify-end">
             <label className="font-bold text-lg" htmlFor="email">
-              Fullname:
+              Full Name:
             </label>
             <input
               type="text"
-              name="fullname"
-              id="fullname"
+              name="fullName"
+              id="fullName"
               className="w-5/6  border mx-5 text-md p-1 px-3 rounded-md"
               onChange={formik.handleChange}
-              value={formik.values.fullname}
+              value={formik.values.fullName}
               placeholder="Adams Smith"
               required
             />
@@ -105,7 +109,8 @@ export default function Giveaway() {
           disabled={isLoading}
           className="border border-yellow-600 py-2 px-10 hover:text-yellow-800 bg-yellow-600 hover:bg-gray-50 rounded-lg text-md font-bold"
         >
-          SEND TO MY INBOX
+          {isLoading? <><Loader2 className="mr-2 h-4 w-4 animate-spin" />
+      Please wait</>:<>SEND TO MY INBOX</>}
         </Button>
       </form>
     </motion.div>
