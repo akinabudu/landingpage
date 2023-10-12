@@ -14,15 +14,9 @@ dependencies:
   '@radix-ui/react-toast':
     specifier: ^1.1.5
     version: 1.1.5(@types/react-dom@18.2.10)(@types/react@18.2.25)(react-dom@18.2.0)(react@18.2.0)
-  '@react-email/button':
-    specifier: 0.0.10
-    version: 0.0.10
   '@react-email/components':
     specifier: ^0.0.7
     version: 0.0.7
-  '@react-email/html':
-    specifier: 0.0.4
-    version: 0.0.4
   '@react-email/render':
     specifier: ^0.0.7
     version: 0.0.7
@@ -39,10 +33,10 @@ dependencies:
     specifier: ^2.0.0
     version: 2.0.0
   eslint:
-    specifier: 8.47.0
+    specifier: ^8.47.0
     version: 8.47.0
   eslint-config-next:
-    specifier: 13.4.19
+    specifier: ^13.4.19
     version: 13.4.19(eslint@8.47.0)(typescript@5.2.2)
   formik:
     specifier: ^2.4.5
@@ -72,7 +66,7 @@ dependencies:
     specifier: latest
     version: 18.2.0(react@18.2.0)
   react-email:
-    specifier: 1.9.5
+    specifier: ^1.9.5
     version: 1.9.5
   resend:
     specifier: ^1.1.0
@@ -1020,13 +1014,6 @@ packages:
 
   /@react-email/body@0.0.2:
     resolution: {integrity: sha512-SqZrZdxZlH7viwnrLvrMnVzOKpiofVAtho09bmm2siDzy0VMDGItXRzUPLcpg9vcbVJCHZRCIKoNXqA+PtokzQ==}
-    dependencies:
-      react: 18.2.0
-    dev: false
-
-  /@react-email/button@0.0.10:
-    resolution: {integrity: sha512-S8r7NGTxXoxvw5kCdMzpwXdBHhYAhrYM9sylK6xr+2M9osrjHQOPLBoV3I/po9xdzN3WyRcZqQixH0wPeXy2Gw==}
-    engines: {node: '>=16.0.0'}
     dependencies:
       react: 18.2.0
     dev: false
