@@ -25,27 +25,20 @@ export default function Giveaway() {
 
     onSubmit: async (values) => {
       setIsLoading(true);
-      const url = `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/v1/giveaway`;
+      const url = `/api/v1/giveaway`;
       await axios
         .post(url, { fullName: values.fullName, email: values.email })
         .then(
           function (response) {
             setTimeout(() => {
-              if (response.data === "Success") {
-                toast({
-                  title: response.data,
-                  description: "Link has been sent to your email.",
-                });
-                axios.post(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/v1/email`, {
-                  fullName: values.fullName,
-                  email: values.email,
-                });
-              } else {
-                toast({
-                  title: "Error",
-                  description: "Please,use another email address.",
-                });
-              }
+              toast({
+                title: response.data,
+                description: "Link has been sent to your email.",
+              });
+              axios.post(`/api/v1/email`, {
+                fullName: values.fullName,
+                email: values.email,
+              });
               setIsLoading(false);
             }, 3000);
             console.log(response); // Success
