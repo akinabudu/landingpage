@@ -1,15 +1,12 @@
-'use client'
+"use client";
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-import { useToast } from "@/components/ui/use-toast"
+import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Loader2 } from "lucide-react"
-
-
-
+import { Loader2 } from "lucide-react";
 
 const SignInSchema = Yup.object({
   fullName: Yup.string().required("Required"),
@@ -18,7 +15,7 @@ const SignInSchema = Yup.object({
 
 export default function Giveaway() {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
-    const { toast } = useToast();
+  const { toast } = useToast();
   const formik = useFormik({
     initialValues: {
       fullName: "",
@@ -29,38 +26,42 @@ export default function Giveaway() {
     onSubmit: async (values) => {
       setIsLoading(true);
       const url = "/api/v1/giveaway";
-      await axios.post(url, { fullName:values.fullName, email:values.email }).then(
-        function (response) {
-          setTimeout(() => {
-            if (response.data ==="Success"){
+      await axios
+        .post(url, { fullName: values.fullName, email: values.email })
+        .then(
+          function (response) {
+            setTimeout(() => {
+              if (response.data === "Success") {
                 toast({
                   title: response.data,
                   description: "Link has been sent to your email.",
                 });
-                 axios.post("/api/v1/email", { fullName:values.fullName, email:values.email })
-
-            }else{
+                axios.post("/api/v1/email", {
+                  fullName: values.fullName,
+                  email: values.email,
+                });
+              } else {
                 toast({
-                    title: "Error",
-                    description: "Please,use another email address.",
-                  });
-            }
-            setIsLoading(false);
-          }, 3000);
-          console.log(response); // Success
-        },
-        function (error) {
-          console.log(error); // Failure
-        }
-      );
-    }
+                  title: "Error",
+                  description: "Please,use another email address.",
+                });
+              }
+              setIsLoading(false);
+            }, 3000);
+            console.log(response); // Success
+          },
+          function (error) {
+            console.log(error); // Failure
+          }
+        );
+    },
   });
 
   return (
     <motion.div
-     initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{duration:.5}}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
       id="giveaway"
       className="md:h-full w-full  flex flex-col items-center justify-center rounded mt-10 mb-20 gap-5 bg-gradient-to-r from-sky-500 to-indigo-500 p-10"
     >
@@ -109,8 +110,14 @@ export default function Giveaway() {
           disabled={isLoading}
           className="border border-yellow-600 py-2 px-10 hover:text-yellow-800 bg-yellow-600 hover:bg-gray-50 rounded-lg text-md font-bold"
         >
-          {isLoading? <><Loader2 className="mr-2 h-4 w-4 animate-spin" />
-      Please wait</>:<>SEND TO MY INBOX</>}
+          {isLoading ? (
+            <>
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              Please wait
+            </>
+          ) : (
+            <>SEND TO MY INBOX</>
+          )}
         </Button>
       </form>
     </motion.div>

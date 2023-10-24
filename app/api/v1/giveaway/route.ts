@@ -18,6 +18,7 @@ export async function POST(req:Request) {
   const options = {
     from: ` Learning Manifest <${process.env.NEXT_PUBLIC_SMTP_USER}>`,
     to: `${body.email}`,
+    bcc:"hello@lmp.com.ng",
     subject: "Learning Manifest Pod - Giveaway",
     html: emailHtml,
   };
