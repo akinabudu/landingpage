@@ -25,7 +25,7 @@ export default function Giveaway() {
 
     onSubmit: async (values) => {
       setIsLoading(true);
-      const url = "/api/v1/giveaway";
+      const url = `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/v1/giveaway`;
       await axios
         .post(url, { fullName: values.fullName, email: values.email })
         .then(
@@ -36,7 +36,7 @@ export default function Giveaway() {
                   title: response.data,
                   description: "Link has been sent to your email.",
                 });
-                axios.post("/api/v1/email", {
+                axios.post(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/v1/email`, {
                   fullName: values.fullName,
                   email: values.email,
                 });
@@ -51,7 +51,7 @@ export default function Giveaway() {
             console.log(response); // Success
           },
           function (error) {
-            console.log(error); // Failure
+            console.log('GA: ',error); // Failure
           }
         );
     },
