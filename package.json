@@ -12,7 +12,7 @@
     "@hubspot/api-client": "^10.0.0",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-toast": "^1.1.5",
-    "@react-email/components": "^0.0.7",
+    "@react-email/components": "^0.0.10",
     "@react-email/render": "^0.0.7",
     "@tawk.to/tawk-messenger-react": "^2.0.2",
     "axios": "^1.5.1",
